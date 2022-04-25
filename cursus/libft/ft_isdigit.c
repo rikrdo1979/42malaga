@@ -6,14 +6,15 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 23:26:08 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/24 23:34:43 by rechever         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:57:45 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_ft_is_digit(int d)
+int	ft_isdigit(int c)
 {
-	if (d >= '0' && d <= '9')
-
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
