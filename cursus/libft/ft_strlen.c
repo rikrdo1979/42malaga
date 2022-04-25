@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 11:24:22 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/25 23:08:59 by rechever         ###   ########.fr       */
+/*   Created: 2022/04/25 23:11:57 by rechever          #+#    #+#             */
+/*   Updated: 2022/04/25 23:25:33 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_strlen(const char *c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (c[i] != '\0')
+		i++;
+	return (i);
 }
