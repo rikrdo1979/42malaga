@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 17:09:13 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/25 23:24:28 by rechever         ###   ########.fr       */
+/*   Updated: 2022/04/25 23:35:10 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int	ft_isascii(int c);
-int ft_isprint(int c);
-int ft_strlen(const char *t);
+int	ft_isprint(int c);
+int	ft_strlen(const	char *t);
 
 #endif
