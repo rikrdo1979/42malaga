@@ -6,13 +6,13 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:11:57 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/25 23:25:33 by rechever         ###   ########.fr       */
+/*   Updated: 2022/04/26 23:22:27 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *c)
+size_t	ft_strlen(const char *c)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 #    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 13:13:58 by rechever          #+#    #+#              #
-#    Updated: 2022/04/25 23:19:01 by rechever         ###   ########.fr        #
+#    Updated: 2022/04/26 23:51:31 by rechever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRCS		= 	ft_isalpha.c \
 				ft_isascii.c \
 				ft_isprint.c \
 				ft_strlen.c \
+				ft_toupper.c \
+				ft_tolower.c \
 
 OBJS		= ${SRCS:.c=.o}
 TARGET		= libft.a
