@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 11:57:01 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/28 12:35:46 by rechever         ###   ########.fr       */
+/*   Created: 2022/04/27 13:33:31 by rechever          #+#    #+#             */
+/*   Updated: 2022/04/28 12:34:58 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr( const char *s, int c)
 {
 	char	*str;
 
-	str = (char *) s;
+	str = (char *)s;
+	while (*str)
+		str++;
 	while (*str != c)
 	{
-		if (*str == '\0')
+		if (str == s)
+		{
 			return (NULL);
-		str++;
+		}
+		str--;
 	}
 	return (str);
 }
