@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_tolower() convierte @c a minusculas */
+
 #include "libft.h"
 
 int	ft_tolower(int c)

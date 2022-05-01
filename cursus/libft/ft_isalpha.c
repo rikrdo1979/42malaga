@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isalpha() comprueba si @c es una letra */
+
 #include "libft.h"
 
 int	ft_isalpha(int c)

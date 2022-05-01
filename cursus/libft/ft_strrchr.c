@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_strrchr() busca la ultima aparicion de un caracter @c en un string @s
+**
+** @c : caracter a buscar
+** @s : string dado
+**
+*/
+
 #include "libft.h"
 
 char	*ft_strrchr( const char *s, int c)

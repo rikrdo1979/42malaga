@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_toupper() convierte @c a mayusculas */
+
 #include "libft.h"
 
 int	ft_toupper(int c)

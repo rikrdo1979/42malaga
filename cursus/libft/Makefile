@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/25 13:13:58 by rechever          #+#    #+#              #
-#    Updated: 2022/04/28 12:53:37 by rechever         ###   ########.fr        #
+#    Created: 2022/05/01 13:22:29 by rechever          #+#    #+#              #
+#    Updated: 2022/05/01 13:22:47 by rechever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ SRCS		= 	ft_isalpha.c \
 				ft_strchr.c \
 				ft_strrchr.c \
 				ft_strncmp.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memchr.c \
+				ft_memcpy.c \
 
 OBJS		= ${SRCS:.c=.o}
 TARGET		= libft.a

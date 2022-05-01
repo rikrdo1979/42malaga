@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_strchr() comprueba si @c esta en @s */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

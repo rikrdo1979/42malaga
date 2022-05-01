@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isalnum() comprueba si @c es un caracter alfanumerico */
+
 #include "libft.h"
 
 int	ft_isalnum(int c)

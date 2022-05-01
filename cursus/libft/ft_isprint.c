@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isprint() comprueba si @c es un caracter imprimible */
+
 #include "libft.h"
 
 int	ft_isprint(int c)

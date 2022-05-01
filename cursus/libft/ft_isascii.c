@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isascii() comprueba si @c es ascii */
+
 #include "libft.h"
 
 int	ft_isascii(int c)
