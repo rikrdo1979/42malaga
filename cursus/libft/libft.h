@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:01:22 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/01 13:06:15 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/02 06:43:22 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *d, const void *s, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif
