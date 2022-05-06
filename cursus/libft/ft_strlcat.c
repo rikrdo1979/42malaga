@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:54:15 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/05 18:30:47 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/06 06:51:17 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 			{
 				*dst = src[i];
 				i++;
-			}
+			ft_}
 		}
 	}
 	return (len);
