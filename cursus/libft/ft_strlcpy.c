@@ -6,11 +6,12 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 12:21:23 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/05 17:53:55 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/06 07:41:51 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ft_strlcpy — size-bounded string copying
+/* 
+** ft_strlcpy — size-bounded string copying
 ** 
 ** The strlcpy() function copies up to size - 1 characters from the 
 ** NUL-terminated string src to dst, NUL-terminating the result.
@@ -22,7 +23,6 @@
 ** RETURN VALUES
 ** The strlcpy() functions return the total length of the string, the length 
 ** of src.
-** 
 */
 
 #include "libft.h"

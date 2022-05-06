@@ -1,9 +1,9 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-msi-desktop
-Linux 5.13.19-2-MANJARO x86_64
+mi-book
+Linux 5.4.188-1-MANJARO x86_64
 $> date
-jue 05 may 2022 18:31:25 CEST
+vie 06 may 2022 07:38:43 CEST
 $> gcc --version
 gcc (GCC) 11.2.0
 Copyright (C) 2021 Free Software Foundation, Inc.
@@ -29,15 +29,14 @@ $> make bonus
 make: *** No hay ninguna regla para construir el objetivo 'bonus'.  Alto.
 
 $> ls -la libft.a
--rw-r--r-- 1 rikrdo rikrdo 8 may  5 18:31 /home/rikrdo/42malaga/cursus/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 rikrdo rikrdo 8 may  6 07:38 /home/rikrdo/42malaga/cursus/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
-= ft_strlcat.c =================================================================
-$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcat.c main.c libft.a -o user_exe
+= ft_strlcpy.c =================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcpy.c main.c libft.a -o user_exe
 
-/usr/bin/ld: /tmp/ft_strlcat-f09a1d.o: en la función `ft_strlcat':
-/home/rikrdo/42malaga/cursus/libft-war-machine/dirlibft/ft_strlcat.c:31: referencia a `ft_strlen' sin definir
-/usr/bin/ld: /home/rikrdo/42malaga/cursus/libft-war-machine/dirlibft/ft_strlcat.c:34: referencia a `ft_strlen' sin definir
+/usr/bin/ld: /tmp/ft_strlcpy-a0d327.o: en la función `ft_strlcpy':
+/home/rikrdo/42malaga/cursus/libft-war-machine/dirlibft/ft_strlcpy.c:38: referencia a `ft_strlen' sin definir
 clang-13: error: linker command failed with exit code 1 (use -v to see invocation)
