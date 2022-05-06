@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 06:30:10 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/02 13:46:01 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:00:26 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,50 +32,56 @@
 ** 	const char *smallstring = "Bar";
 ** 	char *ptr;
 ** 	ptr = strnstr(largestring, smallstring, 4);
-*/
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+** #include <stdio.h>
+** #include <stdlib.h>
+** #include <string.h>
+*/
 
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	
-	size_t i;
-	size_t j;
-	char *b;
+	size_t	i;
+	size_t	j;
+	char	*b;
 
+	if (!big)
+		return (NULL);
 	b = (char *)big;
 	i = 0;
 	j = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
-	if (big[0] == '\0')
-			return(1);
 	while (big[i] != '\0' && i < len)
-	{	
+	{
 		if (big[i] == little[j])
 		{
 			j++;
 			if (little[j] == '\0')
-				return ((char *)((b+1)+(i-j)));
+				return ((char *)((b + 1) + (i - j)));
 		}
+		else
+			j = 0;
 		i++;
 	}
 	return (NULL);
 }
 /*
-int main()
+int	main(void)
 {
-	char    *i1 = ft_strnstr("ipsum lorem dolor sit lorem ipsum dolor", "lorem", 15);
-	char    *i2 = ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15);
-	char    *i3 = ft_strnstr("lorem ipsum dolor sit lorem ipsum dolor", "ipsum", 35);
-	char    *i4 = ft_strnstr("lorem ipsum dolor sit amet", "", 10);
-	char	*i5 = ft_strnstr("", "dolor", 0);
-	
+	char	*i1;
+	char	*i2;
+	char	*i3;
+	char	*i4;
+	char	*i5;
+
+	i1 = ft_strnstr("ipsum lorem dolor sit lorem ipsum dolor", "lorem", 15);
+	i2 = ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15);
+	i3 = ft_strnstr("lorem ipsum dolor sit lorem ipsum dolor", "ipsumm", 145);
+	i4 = ft_strnstr("lorem ipsum dolor sit amet", "", 10);
+	i5 = ft_strnstr("", "dolor", 0);
 	printf("ft_strnstr: \n%s\n%s\n%s\n%s\n%s\n", i1, i2, i3, i4, i5);
-	return 0;
+	return (0);
 }
 */
