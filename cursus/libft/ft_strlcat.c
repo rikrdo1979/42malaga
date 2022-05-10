@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:54:15 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/06 06:51:17 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/08 18:14:51 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,20 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	len;
+	size_t	j;
 
-	len = 0;
-	if (src != NULL)
+	i = 0;
+	j = 0;
+	if (size <= ft_strlen(dst))
+		return (size + ft_strlen(src));
+	j = ft_strlen(dst);
+	i = 0;
+	while (src[i] != '\0' && (j + 1) < size)
 	{
-		len = ft_strlen(src);
-		if (dst != NULL)
-		{
-			len += ft_strlen(dst);
-			i = 0;
-			while (src[i] != '\0' && i < size)
-			{
-				*dst = src[i];
-				i++;
-			ft_}
-		}
+		dst[j] = src[i];
+		i++;
+		j++;
 	}
-	return (len);
+	dst[j] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[i]));
 }

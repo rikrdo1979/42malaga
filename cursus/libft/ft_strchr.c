@@ -6,24 +6,25 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:57:01 by rechever          #+#    #+#             */
-/*   Updated: 2022/04/28 12:35:46 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:21:11 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ft_strchr() comprueba si @c esta en @s */
+/* 
+** ft_strchr() comprueba si @c esta en @s 
+** @s es el string dado
+** @c es el caracter a localizar
+*/
 
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *) s;
-	while (*str != c)
+	while (*s != c)
 	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
+		if (*s == '\0')
+			return (0);
+		s++;
 	}
-	return (str);
+	return ((char *)s);
 }

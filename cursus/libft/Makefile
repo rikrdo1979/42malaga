@@ -30,6 +30,8 @@ SRCS		= 	ft_isalpha.c \
 				ft_strnstr.c \
 				ft_strlcpy.c \
 				ft_strlcat.c \
+				ft_atoi.c \
+				
 OBJS		= ${SRCS:.c=.o}
 TARGET		= libft.a
 INCLUDES	= includes
