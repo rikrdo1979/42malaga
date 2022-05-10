@@ -6,12 +6,12 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 12:39:28 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/01 13:24:17 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/10 07:18:46 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	ft_memcpy() copia @n caracteres de la memoria @src a la memoria @dest
+** ft_memcpy() copia @n caracteres de la memoria @src a la memoria @dest
 **
 ** @n : numero de bytes a copiar
 ** @s : memoria origen

@@ -6,15 +6,16 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:54:15 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/10 07:14:54 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/08 18:14:51 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** ft_strlcat — concatenacion de strings delimitada por size
+** strlcat — size-bounded string concatenation
 ** 
-** retorna el tamaño total del string que se inteta crear, esto significa, el
-** tamaño inicial de @dst + el tamaño de @src. 
+** return the total length of the string they tried to create, that means the 
+** initial length of dst + the length of src.  
+** 
 */
 
 #include "libft.h"
