@@ -6,11 +6,11 @@
 #    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/01 13:22:29 by rechever          #+#    #+#              #
-#    Updated: 2022/05/05 18:29:16 by rechever         ###   ########.fr        #
+#    Updated: 2022/05/11 17:16:08 by rechever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= 	ft_isalpha.c \
+SRC		= 		ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
 				ft_isascii.c \
@@ -31,8 +31,12 @@ SRCS		= 	ft_isalpha.c \
 				ft_strlcpy.c \
 				ft_strlcat.c \
 				ft_atoi.c \
-				
-OBJS		= ${SRCS:.c=.o}
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+
+OBJ			= ${SRC:.c=.o}
 TARGET		= libft.a
 INCLUDES	= includes
 CC			= gcc
@@ -41,14 +45,18 @@ RM			= rm -f
 
 all: ${TARGET}
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
 
-${TARGET}: ${OBJS}
-	ar -rc ${TARGET} ${OBJS}
+${TARGET}: ${OBJ}
+	ar -rc ${TARGET} ${OBJ}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJ}
 
 fclean:
 	${RM} ${TARGET}
