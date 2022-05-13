@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 07:02:19 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/12 09:02:21 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:55:04 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,51 @@
 */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *trim;
-	int i;
-	int j;
+	char	*trim;
+	int		i;
+	int		j;
+	int		k;
 
 	if (!s1)
 		return (NULL);
-	trim = malloc(sizeof)(char) * (ft_strlen(s1) - ft_strlen(set) + 1);
-	while(s1--)
-		while(set--)
-			if (s1[i] == set[j])
-				trim[i]
-			set--;
+	trim = malloc(sizeof(char) * (strlen(s1) - strlen(set) + 1));
+	i = 0;
+	j = 0;
+	k = 0;
+	while (set--)
+	{
+		while (s1--)
+		{
+			if (s1[i] != set[j])
+			{
+				trim[k] = s1[i];
+				k++;
+			}
+			i++;
+		}
+		j++;
+		set--;
+	}
+	trim[k] = '\0';
+	return (trim);
+}
 
+char	main(int argc, char *argv[])
+{
+	char	*s1;
+	char	*set;
+	char	*str;
 
+	if (argc != 3)
+	{
+		printf("Has olvidado el string.\n");
+		exit(1);
+	}
+	str = ft_strtrim(argv[1], argv[2]);
+	printf("String: %s - %s - %s", str, argv[1], argv[2]);
 }
