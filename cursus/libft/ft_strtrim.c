@@ -21,52 +21,70 @@
 ** Devuelve la string recortada o NULL si falla la reserva de memoria.
 */
 
-#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
+#include "libft.h"
+
+size_t	ft_strlen(const char *c)
+{
+	int	i;
+
+	i = 0;
+	while (c[i] != '\0')
+		i++;
+	return (i);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim;
-	int		i;
-	int		j;
-	int		k;
+	//char	*str;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t	found;
+	size_t	slen;
+	size_t	setlen;
 
-	if (!s1)
-		return (NULL);
-	trim = malloc(sizeof(char) * (strlen(s1) - strlen(set) + 1));
 	i = 0;
 	j = 0;
 	k = 0;
-	while (set--)
+	found = 0;
+	slen = ft_strlen(s1);
+	setlen = ft_strlen(set);
+	//str = 0;
+	//str = malloc(sizeof(char) * (slen - setlen + 1));	
+	if (s1 == NULL)
+		return (NULL);
+	while (i < slen)
 	{
-		while (s1--)
+		while (j < setlen)
 		{
 			if (s1[i] != set[j])
-			{
-				trim[k] = s1[i];
-				k++;
-			}
-			i++;
+				found++;
+			j++;
 		}
-		j++;
-		set--;
+		if (found == setlen)
+		{
+			s1[k] = s1[i];
+			k++;
+			//printf("%ld\n", k);
+		}
+		found = 0;
+		j = 0;
+		i++;
 	}
-	trim[k] = '\0';
-	return (trim);
+	s1[k] = '\0';
+	//printf("%ld | %lu\n", (slen - setlen + 1),sizeof(str));
+	return (s1);
 }
 
-char	main(int argc, char *argv[])
+int main(void)
 {
-	char	*s1;
-	char	*set;
-	char	*str;
+	printf("%s\n", ft_strtrim("hooooola", "oa"));
+	//printf("%s\n", ft_strtrim("", "oa"));
+	printf("%s\n", ft_strtrim("abqbc", "abc"));
+	printf("%s\n", ft_strtrim("xavocadoyz", "xyz"));
 
-	if (argc != 3)
-	{
-		printf("Has olvidado el string.\n");
-		exit(1);
-	}
-	str = ft_strtrim(argv[1], argv[2]);
-	printf("String: %s - %s - %s", str, argv[1], argv[2]);
 }
+
