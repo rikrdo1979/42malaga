@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:03:14 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/12 08:46:27 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:39:35 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 ** Devuelve, @str resultante o NULL si falla la reserva de memoria.
 */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -31,11 +29,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	i = 0;
-	if (!s)
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	str = malloc(len + 1);
+	if (!s || !str)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	str = (char *)malloc(sizeof(*s) * (len + 1));
 	while (len-- && s[start] != '\0')
 	{
 		str[i] = s[start];
@@ -45,21 +45,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-/*
-char	main(int argc, char *argv[])
-{
-	char			*str;
-	unsigned int	start;
-	size_t			len;
-
-	if (argc != 4)
-	{
-		printf("Has olvidado el string.\n");
-		exit(1);
-	}
-	start = atoi(argv[2]);
-	len = atoi(argv[3]);
-	str = ft_substr(argv[1], start, len);
-	printf("String: %s - %lu - %lu", str, start, len);
-}
-*/

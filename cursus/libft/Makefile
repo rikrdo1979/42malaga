@@ -1,16 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/01 13:22:29 by rechever          #+#    #+#              #
-#    Updated: 2022/05/11 17:16:08 by rechever         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME	= libft.a
 
-SRC		= 		ft_isalpha.c \
+SRCS	= 		ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
 				ft_isascii.c \
@@ -35,33 +25,24 @@ SRC		= 		ft_isalpha.c \
 				ft_strdup.c \
 				ft_substr.c \
 				ft_strjoin.c \
-				ft_strtrim.c \
 
-OBJ			= ${SRC:.c=.o}
-TARGET		= libft.a
-INCLUDES	= includes
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-RM			= rm -f
 
-all: ${TARGET}
+OBJS	= $(SRCS:%.c=%.o)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
-	
-%.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
+FLAGS	= -Wall -Wextra -Werror
 
-${TARGET}: ${OBJ}
-	ar -rc ${TARGET} ${OBJ}
+$(NAME):
+	gcc $(FLAGS) -c $(SRCS) -I./
+	ar rc $(NAME) $(OBJS)
+
+all: $(NAME)
 
 clean:
-	${RM} ${OBJ}
+	rm -f $(NAME)
 
-fclean:
-	${RM} ${TARGET}
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all, clean, fclean, re

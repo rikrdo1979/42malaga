@@ -21,18 +21,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
+	char	*last;
 
-	str = (char *)s;
-	while (*str)
-		str++;
-	while (*str != c)
+	last = NULL;
+	if (!ft_isascii(c))
+		return ((char *)s);
+	while (*s)
 	{
-		if (str == s)
-		{
-			return (NULL);
-		}
-		str--;
+		if (*s == c)
+			last = (char *)s;
+		s++;
 	}
-	return (str);
+	if (c == '\0')
+		return ((char *)s);
+	return (last);
 }
