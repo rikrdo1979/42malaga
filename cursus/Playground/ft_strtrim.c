@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 07:02:19 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/16 07:08:45 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/15 16:45:11 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,55 +23,53 @@
 
 #include "libft.h"
 
-int	ft_getstart(const char *s1, const char *set)
+char    *ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	size_t	i;
+    char    *str;
+    char    *str2;
+    size_t    i;
+    size_t    j;
+    size_t    k;
+    size_t    found;
+    size_t    slen;
+    size_t    setlen;
 
-	len = ft_strlen(s1);
-	i = 0;
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[i]) == 0)
-			break ;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_getend(const char *s1, const char *set)
-{
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[len - i - 1]) == 0)
-			break ;
-		i++;
-	}
-	return (len - i);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		start;
-	int		end;
-	char	*newstr;
-
-	if (s1 == NULL)
-		return (NULL);
-	if (set == NULL)
-		return (ft_strdup(s1));
-	start = ft_getstart(s1, set);
-	end = ft_getend(s1, set);
-	if (start >= end)
-		return (ft_strdup(""));
-	newstr = (char *)malloc(sizeof(char) * (end - start + 1));
-	if (newstr == NULL)
-		return (NULL);
-	ft_strlcpy(newstr, s1 + start, end - start + 1);
-	return (newstr);
+    i = 0;
+    j = 0;
+    k = 0;
+    found = 0;
+    slen = (size_t)ft_strlen(s1);
+    setlen = (size_t)ft_strlen(set);
+    if (s1 == NULL)
+        return (NULL);
+    if (slen == 0)
+      return(ft_strdup(""));
+    str = malloc(slen - setlen + 1);    
+    while (i < slen)
+    {
+        while (j < setlen)
+        {
+            if (s1[i] != set[j])
+                found++;
+            j++;
+        }
+        if (found == setlen)
+        {
+            str[k] = s1[i];
+            k++;
+        }
+        found = 0;
+        j = 0;
+        i++;
+    }
+    str[k] = '\0';
+    str2 = malloc(k + 1);
+    while (j < k)
+    {
+      str2[j] = str[j];
+      j++;
+    }
+    free(str);
+    str2[j] = '\0';
+    return (str2);
 }
