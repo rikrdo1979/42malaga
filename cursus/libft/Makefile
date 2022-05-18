@@ -6,7 +6,7 @@
 #    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 15:55:04 by rechever          #+#    #+#              #
-#    Updated: 2022/05/17 18:45:11 by rechever         ###   ########.fr        #
+#    Updated: 2022/05/18 08:22:01 by rechever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRCS	= 		ft_isalpha.c \
 				ft_substr.c \
 				ft_strjoin.c \
 				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
 				ft_strmapi.c \
 				ft_striteri.c \
 				ft_putchar_fd.c \
@@ -53,10 +55,10 @@ BONUS	=	ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
-			#ft_lstclear.c \
-			#ft_lstdelone.c \
-			#ft_lstiter.c \
-			#ft_lstmap.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
 					
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BONUS:.c=.o)
