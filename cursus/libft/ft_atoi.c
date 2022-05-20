@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 18:20:42 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/10 07:18:10 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:47:05 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,23 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	result;
-	int	i;
+	unsigned int	num;
+	int				i;
+	int				np;
 
-	result = 0;
-	sign = 0;
+	np = 1;
 	i = 0;
-	if (!str)
-		return (0);
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
 		i++;
-	if (str[i] == '-')
-		sign++;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= 48 && str[i] <= 57)
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			np = -1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result *= 10;
-		result += str[i] - 48;
+		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	if (sign % 2 != 0)
-		result *= -1;
-	return (result);
+	return ((int)(np * num));
 }

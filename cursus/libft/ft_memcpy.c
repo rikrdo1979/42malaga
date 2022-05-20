@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 12:39:28 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/10 07:18:46 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:03:09 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	*ft_memcpy(void *d, const void *s, size_t n)
 	dest = d;
 	src = s;
 	i = 0;
+	if (!d && !s)
+		return (0);
 	while (i < n)
 	{
 		dest[i] = src[i];

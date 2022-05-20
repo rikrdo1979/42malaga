@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 13:33:31 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/10 07:19:43 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:24:26 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ char	*ft_strrchr(const char *s, int c)
 	char	*last;
 
 	last = NULL;
-	if (!ft_isascii(c))
-		return ((char *)s);
+	if ((char)c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			last = (char *)s;
 		s++;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (last);
 }

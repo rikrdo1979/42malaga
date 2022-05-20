@@ -6,7 +6,7 @@
 #    By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 15:55:04 by rechever          #+#    #+#              #
-#    Updated: 2022/05/18 08:22:01 by rechever         ###   ########.fr        #
+#    Updated: 2022/05/20 13:51:18 by rechever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,15 +50,15 @@ SRCS	= 		ft_isalpha.c \
 					
 OBJS	= 	$(SRCS:.c=.o)
 
-BONUS	=	ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
+BONUS	=	ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c \
 					
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BONUS:.c=.o)

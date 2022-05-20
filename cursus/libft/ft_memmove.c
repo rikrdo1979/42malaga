@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 16:17:47 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/01 17:23:43 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:10:58 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*tmp;
 	size_t	i;
 
+	if (!dst && !src)
+		return (NULL);
 	tmp = (char *)dst;
 	str = (char *)src;
 	i = 0;

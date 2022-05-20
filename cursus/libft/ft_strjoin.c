@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:49:11 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/11 17:22:08 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:01:02 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	str3 = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!str3)
+		return (NULL);
 	while (len1--)
 	{
 		str3[i] = s1[i];

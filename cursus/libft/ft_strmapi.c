@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:56:01 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/17 13:16:56 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:16:02 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int		i;
+	char	*ptr;
+	int		index;
 
-	str = ft_strdup(s);
-	i = 0;
-	if (!s || (!s && !f))
-		return (ft_strdup(""));
-	else if (!f)
-		return (ft_strdup(s));
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	while (s[i])
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!ptr)
+		return (NULL);
+	index = 0;
+	while (s[index])
 	{
-		str[i] = (*f)(i, s[i]);
-		i++;
+		ptr[index] = f(index, s[index]);
+		++index;
 	}
-	str[i] = '\0';
-	return (str);
+	ptr[index] = '\0';
+	return (ptr);
 }

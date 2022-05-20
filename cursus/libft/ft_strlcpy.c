@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 12:21:23 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/06 07:41:51 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:27:37 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	len;
 
-	len = 0;
-	if (src != NULL)
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	i = 0;
+	while (src[i] != '\0' && i < (size - 1))
 	{
-		len = ft_strlen(src);
-		if (dst != NULL && size != 0)
-		{
-			i = 0;
-			while (i < len && i < (size - 1))
-			{
-				dst[i] = src[i];
-				i++;
-			}
-			dst[i] = '\0';
-		}
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0';
 	return (len);
 }

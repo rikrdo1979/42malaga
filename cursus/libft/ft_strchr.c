@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:57:01 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/14 18:13:12 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:28:38 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (0);
 	while (*s)
 	{
 		if (*s == (char)c)

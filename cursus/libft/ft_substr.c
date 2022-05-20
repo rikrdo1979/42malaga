@@ -6,7 +6,7 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:03:14 by rechever          #+#    #+#             */
-/*   Updated: 2022/05/15 16:14:37 by rechever         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:11:42 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len < strleng)
 		str = malloc(len + 1);
 	if (!s || !str)
-		return (NULL);
+		return (ft_strdup(""));
 	while (len-- && s[start] != '\0')
 	{
 		str[i] = s[start];
