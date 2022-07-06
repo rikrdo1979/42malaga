@@ -6,12 +6,15 @@
 /*   By: rechever <rechever@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:10:39 by rechever          #+#    #+#             */
-/*   Updated: 2022/06/07 16:53:58 by rechever         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:38:34 by rechever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-char	*get_next_line(int fd)
+int main()
 {
+	int	fd;
 }
